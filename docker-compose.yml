@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  bigartm:
+    build: 
+        context: .
+        dockerfile: bigartm/Dockerfile
+    volumes:
+      - ${SOURCES_PATH}:/notebooks
+    ports:
+      - 8888:8888
+    restart_policy:
+        condition: always

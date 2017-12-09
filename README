@@ -1,0 +1,11 @@
+# bigartm-notebook
+
+Ready-to-run BigARTM (https://github.com/bigartm) Jupyter application in Docker.
+
+## Quick Start
+
+```
+cp .env.example .env
+
+docker-compose up -d
+```

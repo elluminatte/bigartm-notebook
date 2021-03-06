@@ -18,10 +18,12 @@ RUN git clone --branch=stable https://github.com/bigartm/bigartm.git \
 && mkdir build && cd build \
 && cmake .. \
 && make \
+&& make install 
 
-# Step 4. Install BigARTM
-&& make install \
-&& export ARTM_SHARED_LIBRARY=/usr/local/lib/libartm.so
+RUN cd bigartm/3rdparty/protobuf-3.0.0/python && python3 setup.py build && python3 setup.py install
+RUN cd bigartm/python && python3 setup.py install
+
+ENV ARTM_SHARED_LIBRARY=/usr/local/lib/libartm.so
 
 # Step 5. Install necessary python packages
 RUN pip install nltk \

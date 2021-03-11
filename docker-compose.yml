@@ -2,9 +2,7 @@ version: "2"
 
 services:
   bigartm:
-    build: 
-        context: .
-        dockerfile: Dockerfile
+    image: public.ecr.aws/s8v6l0s3/bigartm-notebook
     ports:
       - 80:80
     restart: always

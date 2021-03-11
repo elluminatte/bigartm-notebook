@@ -4,10 +4,7 @@ services:
   bigartm:
     build: 
         context: .
-        dockerfile: bigartm/Dockerfile
-    volumes:
-      - ${SOURCES_PATH}:/notebooks
-      - ./jupyter_notebook_config.json:/home/jovyan/.jupyter/jupyter_notebook_config.json
+        dockerfile: Dockerfile
     ports:
-      - 8888:8888
+      - 80:80
     restart: always

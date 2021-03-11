@@ -29,6 +29,15 @@ ENV ARTM_SHARED_LIBRARY=/usr/local/lib/libartm.so
 RUN pip install nltk \
 && pip install html2text 
 
+COPY jupyter_notebook_config.json .
+
+RUN sed -i 's/c.NotebookApp.port = 8888/c.NotebookApp.port = 80/' /etc/jupyter/jupyter_notebook_config.py
+
+RUN cat /etc/jupyter/jupyter_notebook_config.py
+
+
 RUN cd / && mkdir notebooks && chown -R jovyan:users notebooks/
+
+EXPOSE 8888
 
 WORKDIR "/notebooks"

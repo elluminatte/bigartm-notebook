@@ -4,5 +4,5 @@ services:
   bigartm:
     image: public.ecr.aws/s8v6l0s3/bigartm-notebook
     ports:
-      - 80:80
+      - 80:8888
     restart: always

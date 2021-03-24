@@ -2,12 +2,7 @@ version: "2"
 
 services:
   bigartm:
-    build: 
-        context: .
-        dockerfile: bigartm/Dockerfile
-    volumes:
-      - ${SOURCES_PATH}:/notebooks
-      - ./jupyter_notebook_config.json:/home/jovyan/.jupyter/jupyter_notebook_config.json
+    image: public.ecr.aws/s8v6l0s3/bigartm-notebook
     ports:
-      - 8888:8888
+      - 80:8888
     restart: always
